@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import Operator from '@/components/Operator'
 import EnterNumber from '@/components/EnterNumber'
 import EnterAmount from '@/components/EnterAmount'
+import pushAmount from '@/components/PushAmount'
 
 Vue.use(Router)
 
@@ -13,9 +13,15 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
-    },
-	{ path: '/operator/:name', component: Operator },
-	{ path: '/enterNumber', component: EnterNumber},
-	{ path: '/enterAmount', component: EnterAmount}
+    }, {
+      path: '/enterNumber/:name',
+      component: EnterNumber
+    }, {
+      path: '/enterAmount',
+      component: EnterAmount
+    }, {
+      path: '/pushAmount',
+      component: pushAmount
+    }
   ]
 })

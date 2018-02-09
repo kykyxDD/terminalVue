@@ -1,14 +1,3 @@
-/*var operator = Vue.extend({ 
-  template: '#operator',
-  watch: {
-    '$route' (to, from) {
-      // обработка изменений параметров пути...
-    }
-  }
-});
-
-export default operator;*/
-
 <template>
     <div class='cont-enter-number'>
     	<div class='title'>foo {{$route.params.name}}</div> 
@@ -17,7 +6,6 @@ export default operator;*/
 </template>
 
 <script>
-
 export default {
   name: 'Operator',
   data () {
@@ -34,16 +22,12 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-
 .cont-enter-number{
-
-  .title{
-  color: red;
-
+  .title {
+    color: red;
   }
-  a{
-  color: blue;
+  a {
+    color: blue;
   }
 }
-
 </style>

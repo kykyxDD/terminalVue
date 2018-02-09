@@ -1,0 +1,63 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+@mixin btn(){
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    cursor: pointer;
+    background-color: seagreen;
+    border-radius: 5px;
+}
+
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    .cont-app {
+        display: flex;
+        .terminal {
+            margin-bottom: auto;
+            margin-top: auto;
+        }
+    }
+    .list-operator {
+        display: flex;
+        .itm-operator{
+            width: 200px;
+            height: 100px
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    .btn-back {
+        @include btn();
+        background-color: yellow;
+    }
+    .btn-next-page {
+        @include btn();
+        
+    }
+}
+.btn {
+    @include btn();
+    &.disabled {
+        pointer-events: none;
+        background-color: grey;
+    }
+}

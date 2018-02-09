@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <!--<img src="./assets/logo.png">-->
-    <div v-for="todo in oper">
-      <router-link :to="'/operator/' + todo">Go to {{todo}}</router-link>
+    <div class='cont-app'>
+      <div class='terminal'>
+        <router-view/>
+      </div>
     </div>
-    <router-view/>
   </div>
 </template>
 
@@ -12,20 +12,15 @@
 export default {
   name: 'App',
   data () {
-    return{
-      oper: ['mtc', 'megafon']
+    return {
+      maxSum: 100,
+      minSum: 1
     }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped lang='scss'>
+@import 'sass/default.scss';
+@import 'sass/app.scss';
 </style>
