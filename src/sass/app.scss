@@ -16,25 +16,14 @@ body {
 }
 
 #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    .cont-app {
-        display: flex;
-        .terminal {
-            margin-bottom: auto;
-            margin-top: auto;
-        }
+    .terminal {
+        margin-bottom: auto;
+        margin-top: auto;
     }
     .list-operator {
         display: flex;
+        margin-top: auto;
+        margin-bottom: auto;
         .itm-operator{
             width: 200px;
             height: 100px
@@ -53,11 +42,9 @@ body {
         @include btn();
         
     }
-}
-.btn {
-    @include btn();
-    &.disabled {
-        pointer-events: none;
-        background-color: grey;
+    .footer {
+        .btn-menu{
+            @include btnBgMenu()
+        }
     }
 }

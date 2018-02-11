@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <div class='cont-app'>
-      <div class='terminal'>
-        <router-view/>
-      </div>
+    <div class='terminal'>
+      <div class="header"></div>
+      <router-view/>
     </div>
   </div>
 </template>

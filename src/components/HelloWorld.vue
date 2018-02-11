@@ -5,6 +5,9 @@
         <router-link :to="'/enterNumber/' + todo.name" class='btn'>Go to {{todo.name}}</router-link>
       </div>
     </div>
+    <div class="footer">
+      <div class='btn-menu'>Mеню</div>
+    </div>
   </div>
 </template>
 
