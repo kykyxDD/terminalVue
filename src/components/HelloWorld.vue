@@ -1,12 +1,18 @@
 <template>
-  <div class="hello">
-    <div class='list-operator' >
-      <div class='itm-operator' v-for="(todo, index) in oper" :key='index'>
-        <router-link :to="'/enterNumber/' + todo.name" class='btn'>Go to {{todo.name}}</router-link>
+  <div class="hello d-flex flex-column cont-terminal">
+    <div class='mt-auto mb-auto'>
+      <div class='list-operator ml-auto mr-auto' >
+        <div class='itm-operator' v-for="(todo, index) in oper" :key='index'>
+          <router-link :to="'/enterNumber/' + todo.name" class='link-operator'>
+          <div class='icon-operator' v-bind:class="todo.id">
+          </div>
+          {{todo.title}}
+          </router-link>
+        </div>
       </div>
     </div>
-    <div class="footer">
-      <div class='btn-menu'>Mеню</div>
+    <div class="footer d-flex justify-content-between align-items-center">
+      <div class='btn-menu btn ml-auto mr-auto  '>Mеню</div>
     </div>
   </div>
 </template>
@@ -17,9 +23,9 @@ export default {
   data () {
     return {
       oper: [{
-        name: 'mtc', id: 'mtc'
+        name: 'mtc', title: 'МТС', id: 'mtc', image: './mtc.svg'
       }, {
-        name: 'megafon', id: 'megafon'
+        name: 'megafon', title: 'Мегафон', id: 'megafon', image: './megafon.png'
       }]
     }
   }

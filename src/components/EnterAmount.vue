@@ -1,16 +1,21 @@
 <template>
-  <div>
-    <div class="">
-      Введите сумму
-    </div>
-    <div>
-      <input type="text"  v-model='sumAmount' v-on:input="checkSum($event.target.value)"/><br>
-      <span>{{sumFinish}}</span>
-    </div>
-    <div class='footer d-flex'>
-        <router-link to="/enterAmount" class='btn btn-back'>Отмена</router-link>
-    	  <router-link to="/pushAmount"  class='btn btn-next-page' :class='{disabled: sumFinish < minSum }'>Go enter number</router-link>
+  <div class='d-flex flex-column cont-terminal'>
+    <div class='mt-auto mb-auto'>
+      <div class="">
+        Введите сумму
       </div>
+      <div>
+        <input type="text"  v-model='sumAmount' v-on:input="checkSum($event.target.value)"/><br>
+        <span>{{sumFinish}}</span>
+      </div>
+    </div>
+    
+    <div class='footer '>
+      <div class='cont-footer d-flex justify-content-between align-items-center w-100'>
+        <router-link to="/enterAmount" class='btn btn-back'>Отмена</router-link>
+        <router-link to="/pushAmount"  class='btn btn-next-page' :class='{disabled: sumFinish < minSum }'>Go enter number</router-link>
+      </div>
+    </div>
   </div>
 </template>
 
