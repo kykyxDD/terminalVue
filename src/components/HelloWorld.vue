@@ -22,12 +22,11 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      oper: [{
-        name: 'mtc', title: 'МТС', id: 'mtc', image: './mtc.svg'
-      }, {
-        name: 'megafon', title: 'Мегафон', id: 'megafon', image: './megafon.png'
-      }]
+      oper: this.$parent.$options.data().oper
     }
+  },
+  created: function() {
+    console.log(this.$parent.$options.data,this.$parent)
   }
 }
 </script>

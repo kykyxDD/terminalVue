@@ -30,7 +30,7 @@
       <div class='cont-footer d-flex justify-content-between align-items-center w-100'>
         <router-link to="/" class='btn btn-back'> Отмена </router-link>
 
-    	  <router-link to="/enterAmount"  class='btn btn-next-page' :class='{disabled: arrNumber.length <= lenNumber }'> Go enter number </router-link>
+    	  <router-link :to="'/enterAmount/' + $route.params.name +'/'+arrNumber.join('')" operator='$route.params.name' class='btn btn-next-page' :class='{disabled: arrNumber.length <= lenNumber }'> Go enter number </router-link>
       </div>
     </div>
   </div>
@@ -39,12 +39,18 @@
 <script>
 export default {
   name: 'EnterNumber',
+
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
       arrNumber: [],
       lenNumber: 10
     }
+  },
+  created: function() {
+
+    this.$parent.setOperator(this.$route.params.name);
+
   },
   methods: {
     incAge (event) {

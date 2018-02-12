@@ -13,7 +13,26 @@ export default {
   data () {
     return {
       maxSum: 100,
-      minSum: 1
+      minSum: 1,
+      oper: {
+      "mtc":{
+        name: 'mtc', title: 'МТС', id: 'mtc', image: './mtc.svg'
+      }, 
+      "megafon":{
+        name: 'megafon', title: 'Мегафон', id: 'megafon', image: './megafon.png'
+      }},
+      itemOper: null, 
+      arrNumber: [],
+      lenNumber: 10,
+      pres: 0.05,
+      minSum: 1,
+      maxSum: 100
+    }
+  },
+  methods: {
+    setOperator(name){ 
+
+      this.itemOper = this.$data.oper[name];
     }
   }
 }

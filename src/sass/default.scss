@@ -44,6 +44,19 @@ $h-header: 100px;
         @include btnBgDisabled();
     }
 }
+@mixin dFlex(){
+    display: flex;
+}
+@mixin justifyContentBetween(){
+    justify-content: space-between;
+}
+@mixin justifyContentCenter(){
+    justify-content: center;
+}
+
+@mixin alignItemsCenter() {
+    align-items: center
+}
 .d-flex {
     display: flex;
 }
@@ -69,10 +82,15 @@ $h-header: 100px;
     height: 60px;
     background-color: $clr_footer;
     .cont-footer {
-        margin-left:10px;
-        margin-right: 10px;
+        padding-left:10px;
+        padding-right: 10px;
+        @include dFlex();
+        @include justifyContentBetween();
+        @include alignItemsCenter();
+
     }
 }
+
 .w-100{
     width: 100%
 }

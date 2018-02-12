@@ -17,7 +17,7 @@ export default new Router({
       path: '/enterNumber/:name',
       component: EnterNumber
     }, {
-      path: '/enterAmount',
+      path: '/enterAmount/:name/:number',
       component: EnterAmount
     }, {
       path: '/pushAmount',

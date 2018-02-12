@@ -4,15 +4,18 @@
       <div class="">
         Введите сумму
       </div>
-      <div>
-        <input type="text"  v-model='sumAmount' v-on:input="checkSum($event.target.value)"/><br>
-        <span>{{sumFinish}}</span>
+      <div >
+        <input type="number"  v-model='sumAmount' v-on:input="checkSum($event.target.value)"/><br>
+        <div v-if='sumAmount>0'>
+        <span>{{sumAmount}}</span> - <span>{{sumAmount - sumFinish}}</span> = <span>{{sumFinish}}</span> 
+        </div>
       </div>
+      <div>Процент за снятие: {{ pres*100 }}%</div>
     </div>
     
     <div class='footer '>
       <div class='cont-footer d-flex justify-content-between align-items-center w-100'>
-        <router-link to="/enterAmount" class='btn btn-back'>Отмена</router-link>
+        <router-link :to="'/enterNumber/'+ $route.params.name"  class='btn btn-back'>Отмена</router-link>
         <router-link to="/pushAmount"  class='btn btn-next-page' :class='{disabled: sumFinish < minSum }'>Go enter number</router-link>
       </div>
     </div>
@@ -22,18 +25,23 @@
 <script>
 export default {
   name: 'EnterAmount',
+  //props: ['operator'],
   data () {
     return {
       sumAmount: 0,
       sumFinish: 0,
-      pres: 0.8,
-      minSum: 1
+      pres: this.$parent.$options.data().pres,
+      minSum: this.$parent.$options.data().minSum
     }
   },
   methods: {
     checkSum (event) {
-      this.sumFinish = this.sumAmount * this.pres
+      var pr = this.pres
+      this.sumFinish = this.sumAmount - (this.sumAmount * pr)
     }
+  },
+  created: function(){
+    console.log(this.$parent)
   }
 }
 </script>
