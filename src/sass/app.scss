@@ -3,22 +3,8 @@ body {
     margin: 0;
 }
 
-@mixin btn(){
-    width: 150px;
-    height: 40px;
-    line-height: 40px;
-    text-decoration: none;
-    display: block;
-    color: #fff;
-    cursor: pointer;
-    background-color: seagreen;
-    border-radius: 5px;
-}
-
 #app {
-    .hello {
-        height: calc(100% - 100px);
-    }
+    
     .list-operator {
         display: flex;
         margin-top: auto;
@@ -50,22 +36,6 @@ body {
             &.mts .icon-operator{
                 
             }
-        }
-    }
-    .hello {
-
-    }
-    .btn-back {
-        @include btn();
-        background-color: yellow;
-    }
-    .btn-next-page {
-        @include btn();
-        
-    }
-    .footer {
-        .btn-menu{
-            @include btnBgMenu()
         }
     }
 }

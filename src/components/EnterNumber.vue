@@ -8,6 +8,7 @@
           {{ index == 0 ? '(' : ''}}
           {{arrNumber[num] ? arrNumber[num] : '_'}}
           {{ index == 2 ? ')' : ''}}
+          {{ index == 5 || index == 7 ? ' - ' : ''}}
 
         </div>
       </div>
@@ -27,10 +28,10 @@
       </div>
     </div>
     <div class='footer '>
-      <div class='cont-footer d-flex justify-content-between align-items-center w-100'>
-        <router-link to="/" class='btn btn-back'> Отмена </router-link>
-
-    	  <router-link :to="'/enterAmount/' + $route.params.name +'/'+arrNumber.join('')" operator='$route.params.name' class='btn btn-next-page' :class='{disabled: arrNumber.length <= lenNumber }'> Go enter number </router-link>
+      <div class='cont-footer  w-100'>
+        <router-link to="/" class='btn btn-back'> Назад </router-link>
+        <router-link to="/" class='btn btn-menu ml-auto mr-auto'>Главная</router-link>
+    	  <router-link :to="'/enterAmount/' + $route.params.name +'/'+arrNumber.join('')" operator='$route.params.name' class='btn btn-next-page' :class='{disabled: arrNumber.length <= lenNumber }'>Оплатить </router-link>
       </div>
     </div>
   </div>

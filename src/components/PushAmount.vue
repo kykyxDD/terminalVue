@@ -1,20 +1,28 @@
 <template>
-  <div v-bind:class="{ load: loadData }" class='d-flex flex-column cont-terminal'>
+  <div v-bind:class="{ load: loadData, result_true: !loadData &&  resultData, result_false: !loadData && !resultData }" class='d-flex flex-column cont-terminal'>
     <div class='mt-auto mb-auto'>
       <div class="">
-        <div v-if='loadData'>
-          <div class=''>
-            Ожидание результата. Подождите немного
+        <div class='cont-icon'>
+          <div class='preload'>
+            <div class='circle'>
+            </div>
           </div>
         </div>
-        <div v-else>
-          {{resultData == true ? 'Оплата прошла успешно' : 'Произошла ошибка. Обратитель к оператору'}}
+        <div class='cont-result'>
+          <div v-if='loadData'>
+            Ожидание результата. Подождите немного
+          </div>
+          <div v-else>
+            {{resultData == true ? 'Оплата прошла успешно' : 'Произошла ошибка. Обратитель к оператору'}}
+          </div>
         </div>
       </div>
     
     </div>
     <div class='footer d-flex'>
-      <router-link to="/" class='btn btn-back'>Home</router-link>
+      <div class='cont-footer '>
+      <router-link to="/" class='btn btn-menu ml-auto mr-auto'>Главная</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -28,11 +36,6 @@ export default {
       resultData: false
     }
   },
-  methods: {
-    getResult: function() {
-
-    }
-  },
   created: function(){
     var self= this;
     this.loadData = true;
@@ -41,9 +44,8 @@ export default {
       var ran = Math.random()
       var val = Math.round(ran)
 
-      self.resultData = Boolean(val);
-      console.log(self.resultData, val, ran)
-    },2000)
+      self.resultData = Boolean(val)
+    }, 2000)
   }
 }
 </script>

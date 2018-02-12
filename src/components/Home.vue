@@ -19,14 +19,11 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Home',
   data () {
     return {
       oper: this.$parent.$options.data().oper
     }
-  },
-  created: function() {
-    console.log(this.$parent.$options.data,this.$parent)
   }
 }
 </script>

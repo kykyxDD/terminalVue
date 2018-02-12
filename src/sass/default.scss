@@ -6,6 +6,7 @@ body {
 @import 'mixin';
 $h-header: 100px;
 
+
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -26,11 +27,19 @@ $h-header: 100px;
     }
     .cont-terminal {
         height: calc(100% - 100px);   
+            background-color: #Fff;
     }
 
     .btn-back {
         @include btn();
-        background-color: #b9b9ab;
+
+        color: #A66F00;
+
+        background: #FFD073;
+        
+    }
+    .btn-menu {
+    background-color:#F97083;
     }
     .btn-next-page {
         /*include btn();*/
@@ -66,8 +75,19 @@ $h-header: 100px;
 .justify-content-between{
     justify-content: space-between;
 }
+.justify-content-around{
+    justify-content: space-around
+}
+.flex-wrap-reverse{
+    flex-flow: wrap-reverse;
+}
 .flex-column {
     flex-direction: column
+}
+.flex-md-column-reverse {
+    @media  screen and (max-width: 700px){
+        flex-flow: column-reverse wrap; 
+    }
 }
 .align-items-center {
     align-items: center
@@ -75,15 +95,17 @@ $h-header: 100px;
 .header {
     width: 100%;
     height: $h-header;
-    background-color: goldenrod
+    background-color: #5DCFC3;
 }
 .footer {
-    width: 100%;
+    
     height: 60px;
     background-color: $clr_footer;
+    padding-left:10px;
+    padding-right: 10px;
     .cont-footer {
-        padding-left:10px;
-        padding-right: 10px;
+        height: 100%;
+        width: 100%;
         @include dFlex();
         @include justifyContentBetween();
         @include alignItemsCenter();
