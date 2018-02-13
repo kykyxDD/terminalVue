@@ -53,19 +53,6 @@ $h-header: 100px;
         @include btnBgDisabled();
     }
 }
-@mixin dFlex(){
-    display: flex;
-}
-@mixin justifyContentBetween(){
-    justify-content: space-between;
-}
-@mixin justifyContentCenter(){
-    justify-content: center;
-}
-
-@mixin alignItemsCenter() {
-    align-items: center
-}
 .d-flex {
     display: flex;
 }
@@ -128,7 +115,4 @@ $h-header: 100px;
 }
 .mr-auto {
     margin-right: auto
-}
-@mixin h-body(){
-    height: calc(100% - $h-header);
 }

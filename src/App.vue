@@ -12,8 +12,6 @@ export default {
   name: 'App',
   data () {
     return {
-      maxSum: 100,
-      minSum: 1,
       oper: {
         mtc: {
           name: 'mtc', title: 'МТС', id: 'mtc'

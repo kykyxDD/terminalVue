@@ -12,10 +12,12 @@ $clr_footer:    #f2f2f2;
    
 }
 @mixin btnBgMenu(){
-background: #f7edb4;
-
+    background: #f7edb4;
 }
 
+@mixin h-body(){
+    height: calc(100% - $h-header);
+}
 @mixin btn(){
     width: 150px;
     height: 40px;
@@ -30,3 +32,18 @@ background: #f7edb4;
     @include btnBg();
 }
 
+
+
+@mixin dFlex(){
+    display: flex;
+}
+@mixin justifyContentBetween(){
+    justify-content: space-between;
+}
+@mixin justifyContentCenter(){
+    justify-content: center;
+}
+
+@mixin alignItemsCenter() {
+    align-items: center
+}

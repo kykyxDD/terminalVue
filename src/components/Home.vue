@@ -4,8 +4,9 @@
       <div class='list-operator ml-auto mr-auto' >
         <div class='itm-operator' v-for="(todo, index) in oper" :key='index'>
           <router-link :to="'/enterNumber/' + todo.name" class='link-operator'>
-          <div class='icon-operator' v-bind:class="todo.id"></div>
-          {{todo.title}}
+          <div class='icon-operator' v-bind:class="todo.id">
+            <span>{{todo.title}}</span>
+          </div>
           </router-link>
         </div>
       </div>
@@ -21,7 +22,7 @@ export default {
   name: 'Home',
   data () {
     return {
-      oper: this.$parent.data.oper
+      oper: this.$parent.$options.data().oper
     }
   }
 }

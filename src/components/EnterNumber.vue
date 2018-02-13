@@ -4,11 +4,11 @@
     	<div class='title'>Пополнение счета на {{itemOper.title || $route.params.name}} </div>
       <div class='d-flex justify-content-center cont-tel'>
         <div class='num'>+7</div>
-        <div v-for="(value, key, index) in lenNumber" :key="key" class='num'>
-          {{ index == 0 ? '(' : ''}}
+        <div v-for="(num, key, index) in lenNumber" :key="key" class='num'>
+          {{ key == 0 ? '(' : ''}}
           {{arrNumber[num] ? arrNumber[num] : '_'}}
-          {{ index == 2 ? ')' : ''}}
-          {{ index == 5 || index == 7 ? ' - ' : ''}}
+          {{ key == 2 ? ')' : ''}}
+          {{ key == 5 || key == 7 ? ' - ' : ''}}
         </div>
       </div>
       <div class='cont-btn-num'>
@@ -23,7 +23,7 @@
         <button type='button'  class='btn-num' value='9'  v-on:click='incAge'> 9 </button><br>
         <button type='button'  class='btn-num' v-on:click='clearNum'> C </button>
         <button type='button'  class='btn-num' value='0'  v-on:click='incAge'> 0 </button>
-        <button type='button'  class='btn-num' v-on:click='delNum'> < </button>
+        <button type='button'  class='btn-num' v-on:click='delNum'> &lt; </button>
       </div>
     </div>
     <div class='footer '>
