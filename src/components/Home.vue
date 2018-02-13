@@ -5,6 +5,7 @@
         <div class='itm-operator' v-for="(todo, index) in oper" :key='index'>
           <router-link :to="'/enterNumber/' + todo.name" class='link-operator'>
           <div class='icon-operator' v-bind:class="todo.id">
+           
           </div>
           {{todo.title}}
           </router-link>

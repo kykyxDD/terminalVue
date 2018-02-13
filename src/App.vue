@@ -16,10 +16,10 @@ export default {
       minSum: 1,
       oper: {
       "mtc":{
-        name: 'mtc', title: 'МТС', id: 'mtc', image: './mtc.svg'
+        name: 'mtc', title: 'МТС', id: 'mtc'
       }, 
       "megafon":{
-        name: 'megafon', title: 'Мегафон', id: 'megafon', image: './megafon.png'
+        name: 'megafon', title: 'Мегафон', id: 'megafon'
       }},
       itemOper: null, 
       arrNumber: [],

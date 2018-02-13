@@ -1,7 +1,7 @@
 <template>
   <div class='cont-enter-number cont-terminal d-flex flex-column'>
     <div class='mt-auto mb-auto'>
-    	<div class='title'>Пополнение счета на {{$route.params.name}} </div>
+    	<div class='title'>Пополнение счета на {{itemOper.title || $route.params.name}} </div>
       <div class='d-flex justify-content-center cont-tel'>
         <div class='num'>+7</div>
         <div v-for="(num, index) in lenNumber"  class='num'>
@@ -44,6 +44,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
+      itemOper: null,
       arrNumber: [],
       lenNumber: 10
     }
@@ -51,7 +52,7 @@ export default {
   created: function() {
 
     this.$parent.setOperator(this.$route.params.name);
-
+    this.itemOper = this.$parent.itemOper;
   },
   methods: {
     incAge (event) {
