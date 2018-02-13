@@ -15,13 +15,17 @@ export default {
       maxSum: 100,
       minSum: 1,
       oper: {
-      "mtc":{
-        name: 'mtc', title: 'МТС', id: 'mtc'
-      }, 
-      "megafon":{
-        name: 'megafon', title: 'Мегафон', id: 'megafon'
-      }},
-      itemOper: null, 
+        mtc: {
+          name: 'mtc', title: 'МТС', id: 'mtc'
+        },
+        megafon: {
+          name: 'megafon', title: 'Мегафон', id: 'megafon'
+        },
+        beeline: {
+          name: 'beeline', title: 'Билайн', id: 'beeline'
+        }
+      },
+      itemOper: null,
       arrNumber: [],
       lenNumber: 10,
       pres: 0.05,
@@ -30,14 +34,12 @@ export default {
     }
   },
   methods: {
-    setOperator(name){ 
-
-      this.itemOper = this.$data.oper[name];
+    setOperator (name) {
+      this.itemOper = this.$data.oper[name]
     }
   }
 }
 </script>
-
 <style scoped lang='scss'>
 @import 'sass/default.scss';
 @import 'sass/app.scss';

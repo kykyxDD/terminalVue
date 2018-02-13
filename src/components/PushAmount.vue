@@ -17,7 +17,7 @@
           </div>
         </div>
       </div>
-    
+
     </div>
     <div class='footer d-flex'>
       <div class='cont-footer '>
@@ -36,14 +36,13 @@ export default {
       resultData: false
     }
   },
-  created: function(){
-    var self= this;
-    this.loadData = true;
-    setTimeout(function(){
-      self.loadData = false;
+  created: function () {
+    var self = this
+    this.loadData = true
+    setTimeout(function () {
+      self.loadData = false
       var ran = Math.random()
       var val = Math.round(ran)
-
       self.resultData = Boolean(val)
     }, 2000)
   }

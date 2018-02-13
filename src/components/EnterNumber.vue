@@ -4,12 +4,11 @@
     	<div class='title'>Пополнение счета на {{itemOper.title || $route.params.name}} </div>
       <div class='d-flex justify-content-center cont-tel'>
         <div class='num'>+7</div>
-        <div v-for="(num, index) in lenNumber"  class='num'>
+        <div v-for="(value, key, index) in lenNumber" :key="key" class='num'>
           {{ index == 0 ? '(' : ''}}
           {{arrNumber[num] ? arrNumber[num] : '_'}}
           {{ index == 2 ? ')' : ''}}
           {{ index == 5 || index == 7 ? ' - ' : ''}}
-
         </div>
       </div>
       <div class='cont-btn-num'>
@@ -49,10 +48,9 @@ export default {
       lenNumber: 10
     }
   },
-  created: function() {
-
-    this.$parent.setOperator(this.$route.params.name);
-    this.itemOper = this.$parent.itemOper;
+  created: function () {
+    this.$parent.setOperator(this.$route.params.name)
+    this.itemOper = this.$parent.itemOper
   },
   methods: {
     incAge (event) {
