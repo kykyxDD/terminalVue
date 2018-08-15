@@ -1,3 +1,7 @@
+Demo-page "Терминал" (https://kykyxdd.github.io/vue/#/)
+
+
+
 # vue
 
 > A Vue.js project
