@@ -1,4 +1,4 @@
-Demo-page "Терминал" (https://kykyxdd.github.io/vue/#/)
+Demo-page "Терминал" (https://kykyxdd.github.io/terminalVue/#/)
 
 
 
